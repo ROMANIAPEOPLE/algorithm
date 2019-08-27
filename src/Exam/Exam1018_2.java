@@ -75,7 +75,7 @@ public class Exam1018_2 {
 				}
 			}
 		}
-		
+
 		System.out.println(count);
 
 	}
