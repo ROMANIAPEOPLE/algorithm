@@ -17,7 +17,7 @@ public class Exam1094 {
 		int stick = 64;
 		int temp = 0;
 		int count = 0;
-		int result=X;
+		int result = X;
 
 		while (true) {
 
@@ -26,9 +26,9 @@ public class Exam1094 {
 				break;
 			}
 
-			stick /= 2; // 
+			stick /= 2; //
 			if (stick <= X) {
-				temp += stick; // 
+				temp += stick; //
 				count++;
 				if (result == temp) {
 					break;
