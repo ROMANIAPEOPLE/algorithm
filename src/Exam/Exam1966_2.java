@@ -20,8 +20,8 @@ public class Exam1966_2 {
 
 			for (int j = 0; j < docuCount; j++) {
 				int pri = sc.nextInt();
-				queue.add(new Document(j, pri));
-			} // 여기까지가 각 문서마다 우선순위 부여를 완료
+				queue.add(new Document(j, pri)); // 문서의 번호와 그 문서의 우선순위 부여
+			} 
 
 			int result = 1;
 
@@ -40,7 +40,7 @@ public class Exam1966_2 {
 				}
 
 				if (check == false) { // 현재문서보다 높은 우선순위를 가진 문서를 발견했다면
-					queue.add(currentDocu); // 그 문서를 맨 뒤로 보냄
+					queue.add(currentDocu); // 현재 문서를 맨 뒤로 보냄
 				}
 
 				else {
