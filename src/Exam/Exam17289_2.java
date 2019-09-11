@@ -1,5 +1,4 @@
 package Exam;
-//BufferedReader와 builder를 통한 시간초과 문제 해결
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -24,6 +23,7 @@ public class Exam17289_2 {
 			arr[i] = Integer.parseInt(stt.nextToken());
 		}
 
+		
 		st.push(0);
 
 		for (int i = 1; i < n; i++) {
