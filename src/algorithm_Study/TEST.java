@@ -1,39 +1,38 @@
 package algorithm_Study;
 
 import java.util.Scanner;
-import java.util.Stack;
 
 public class TEST {
+	public static void main(String[]args) {
 
-	static boolean check(String s, Stack stack) {
-		for (int i = 0; i < s.length(); i++) {
-			if (s.charAt(i) == '(') {
-				stack.push(s.charAt(i));
-			} else {
-				if (!stack.empty()) {
-					stack.pop();
-				} else {
-					return false;
+		int fldmf [][] = new int[5][5];
+		Scanner sc= new Scanner(System.in);
+		
+		for(int i=0; i<fldmf.length; i++) {
+			if(i%2==0) {
+				for(int j=0; j<fldmf[i].length; j++) {
+					fldmf[i][j] = sc.nextInt();
 				}
-
 			}
+		
+			else {
+				for(int j=fldmf[i].length-1; j>=0; j--) {
+					fldmf[i][j] = sc.nextInt();
+				}
+			}
+			
+			
 		}
-		return stack.empty();
-
-	}
-
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-
-		Stack<String> stack = new Stack<String>();
-		int testCase = sc.nextInt();
-
-		for (int i = 0; i < testCase; i++) {
-			String s = sc.next();
-			System.out.println(check(s, stack) == true ? "YES" : "NO");
-			stack.clear();
+	
+		for(int i=0; i<fldmf.length; i++) {
+			for(int j=0; j<fldmf[i].length; j++) {
+				System.out.print(fldmf[i][j]);
+			}
+			System.out.println();
+			
 		}
-
+		
+		
 	}
-
+	
 }
