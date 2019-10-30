@@ -7,7 +7,7 @@ public class Exam1107_2 {
 	static boolean[] broken = new boolean[10]; // 0~10
 
 	static int possible(int c) {
-		if (c == 0) {
+		if (c == 0) { //0일때 예외처리
 			if (broken[0]) {
 				return 0;
 			} else {
@@ -35,14 +35,18 @@ public class Exam1107_2 {
 		}
 
 		int ans = Math.abs(n - 100);
-		// 초기 채널은 100이다. 모든 리모콘의 숫자버튼이 고장났을 경우, +,-버튼으로만
-		// 이동 가능하도록 초기값을 설정해준다.
+		/*
+		 * 초기 채널은 100이다. 모든 리모콘의 숫자버튼이 고장났을 경우 +-버튼으로만이동 가능하도록 초기값을 설정해준다.
+		 */
 
+		// 0부터 1000000까지 모든 채널을 돌면서 N으로 가장 적은 버튼을 눌러 이동할 수 있는 채널을 찾는다.
 		for (int i = 0; i < 1000000; i++) {
 			int c = i;
 			int len = possible(c);
+			// len 변수: c로 숫자버튼만을 이용해서 이동이 가능한지, 가능하다면 몇 번의 버튼을 누르는지 구하는 변수
 			if (len > 0) {
 				int press = Math.abs(c - n);
+				// press: 숫자버튼으로 n에 최대한 인접하게 이동한후 +또는 -를 몇 번 눌러야 하는지 구하는 변수
 				if (ans > len + press) {
 					ans = len + press;
 				}
