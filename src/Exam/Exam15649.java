@@ -1,7 +1,9 @@
 package Exam;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Exam15649 {
 
@@ -21,22 +23,23 @@ public class Exam15649 {
 		}
 		
 		for(int i=1; i<=n; i++) {
-			if(c[i]) continue;
-			c[i] = true; 
+//			if(c[i]) continue;
+//			c[i] = true; 
 			a[index] = i;
 			go(index+1,n,m);
-			c[i] = false;
+//			c[i] = false;
 		}
 	}
 	
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
-		Scanner sc = new Scanner(System.in);
-		
-		int N= sc.nextInt();
-		int M=sc.nextInt();
-		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
+		st = new StringTokenizer(br.readLine());
+		int N = Integer.parseInt(st.nextToken());
+		st = new StringTokenizer(br.readLine());
+		int M = Integer.parseInt(st.nextToken());
 		go(0,N,M);
 		
 		
