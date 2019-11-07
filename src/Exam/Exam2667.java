@@ -32,11 +32,11 @@ public class Exam2667 {
 			
 			count+=1;
 			visit[currY][currX]= true;
-			qu.offer(new int[] {currY+1,currX});
+			
 			qu.offer(new int[] {currY-1,currX});
-			qu.offer(new int[] {currY,currX+1});
+			qu.offer(new int[] {currY+1,currX});
 			qu.offer(new int[] {currY,currX-1});
-	
+			qu.offer(new int[] {currY,currX+1});
 			
 		}
 		
