@@ -1,81 +1,66 @@
 package Exam;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.LinkedList;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
 
 public class Exam2667 {
 
-	public static int n;
-	public static int[][] danji = new int[n][n];
-	public static boolean visit[][] = new boolean[n][n];
+	static int n; // 단지번호
+	static int[][] danji;
+	static int[][] visit;
+	static int count;
+	static ArrayList<Integer> list = new ArrayList<>();
+	static int[] dx = { 0, 1, 0, -1 };
+	static int[] dy = { 1, 0, -1, 0 };
 
-	public static PriorityQueue<Integer> queue;
+	static void dfs(int x, int y) {
+		count++;
+		for (int i = 0; i < 4; i++) {
+			int cx = x + dx[i];
+			int cy = y + dy[i];
 
-	public static void BFS(int y, int x) {
-		Queue<int[]> qu = new LinkedList<int[]>();
-		qu.offer(new int[] { y, x });
-
-		int count = 0;
-		while (!qu.isEmpty()) {
-			int currY = qu.peek()[0];
-			int currX = qu.peek()[1];
-			qu.poll();
-
-			if (currY < 0 || currX < 0 || currY >= n || currX >= n)
-				continue;
-			if (visit[currY][currX])
-				continue;
-			if (danji[currY][currX] == 0)
-				continue;
-
-			count += 1;
-			visit[currY][currX] = true;
-
-			qu.offer(new int[] { currY - 1, currX });
-			qu.offer(new int[] { currY + 1, currX });
-			qu.offer(new int[] { currY, currX - 1 });
-			qu.offer(new int[] { currY, currX + 1 });
+			if (cx >= 0 && cy >= 0 && cx < n && cy < n) {
+				if (danji[cx][cy] == 1 && visit[cx][cy] == 0) {
+					visit[cx][cy] = 1;
+					dfs(cx, cy);
+				}
+			}
 
 		}
-
-		queue.offer(count);
 	}
 
-	public static void main(String[] args) throws NumberFormatException, IOException {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
 
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		n = Integer.parseInt(br.readLine());
+		n = sc.nextInt();
 
 		danji = new int[n][n];
-		visit = new boolean[n][n];
-
-		queue = new PriorityQueue<Integer>();
+		visit = new int[n][n];
 
 		for (int i = 0; i < n; i++) {
-			String str = br.readLine();
+			String str = sc.next();
 			for (int j = 0; j < n; j++) {
-				danji[i][j] = Integer.parseInt(str.substring(j, j + 1)); // 단지 생성
+				danji[i][j] = str.charAt(j) - '0';
 			}
 		}
 
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
-				if (!visit[i][j] && danji[i][j] == 1) {
-					BFS(i, j);
+				if (danji[i][j] == 1 && visit[i][j] == 0) {
+					count = 0;
+					visit[i][j] = 1;
+					dfs(i, j);
+					list.add(count);
+
 				}
 			}
 		}
-
-		System.out.println(queue.size());
-
-		while (!queue.isEmpty()) {
-			System.out.println(queue.poll());
+		Collections.sort(list);
+		System.out.println(list.size());
+		for (int a : list) {
+			System.out.println(a);
 		}
 
 	}
-
 }

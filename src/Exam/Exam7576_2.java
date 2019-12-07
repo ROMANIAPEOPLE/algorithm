@@ -44,17 +44,17 @@ public class Exam7576_2 {
 
 		bfs();
 
-		int max=0;
-		for(int i=0; i<n; i++) {
-			for(int j=0; j<m; j++) {
-				if(max < map[i][j]) {
+		int max = 0;
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < m; j++) {
+				if (max < map[i][j]) {
 					max = map[i][j];
 				}
 			}
 		}
-		
+
 		System.out.println(max);
-		
+
 	}
 
 	public static void bfs() {
@@ -71,7 +71,7 @@ public class Exam7576_2 {
 				if (nX >= 0 && nY >= 0 && nX < n && nY < m && map[nX][nY] == 0) {
 					q.add(new pair(nX, nY));
 					map[nX][nY] = map[x][y] + 1;
-					
+
 				}
 			}
 
