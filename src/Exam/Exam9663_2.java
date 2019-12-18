@@ -33,7 +33,6 @@ public class Exam9663_2 {
 				map[col + 1] = i; // 다음 행의 i열에 퀸을 배치 할 수 있는지 ?
 				if (check(map, col + 1)) { // 이 위치에 퀸을 놓을 수 있다면
 					dfs(map, col + 1); // 다시 dfs로 다음 퀸을 놓으러 간다.
-
 				}
 
 			}
