@@ -1,56 +1,55 @@
 package Exam;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
 public class Exam1987 {
 
-	static int R,C;
-	static int [][] map;
-	static boolean [] visit = new boolean[26];
-	static int [] dx = {-1,1,0,0};
-	static int [] dy = {0,0,-1,1};
-	
-	static int result = 0;
-	public static void main(String[] args) throws NumberFormatException, IOException {
+	static int R, C;
+	static char[][] map;
+	static boolean[] visit = new boolean[26];
+	static int[] dx = { -1, 1, 0, 0 };
+	static int[] dy = { 0, 0, -1, 1 };
+	static int ans = 0;
 
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		
-		R=Integer.parseInt(st.nextToken());
-		C=Integer.parseInt(st.nextToken());
-		
-		map= new int[R][C];
-		
-		for(int i=0; i<map.length; i++) {
-			String str = br.readLine();
-			for(int j=0; j<map.length; j++) {
-				map[i][j] = str.charAt(j) -'A';
-				
-			}
-		}
-		dfs(0,0,0);
-		System.out.println(result);
-	}
-	public static void dfs(int x, int y, int count) {
-		if(visit[map[x][y]]) {
-			result = Math.max(result, count);
-		}
-		else {
+	public static void dfs(int x, int y, int depth) {
+		if (visit[map[x][y]]) {
+			ans = Math.max(ans, depth);
+		} else {
 			visit[map[x][y]] = true;
-			for(int i = 0; i<4; i++) {
-				int curX = x+dx[i];
-				int curY = y+dy[i];
-				
-				if(curX>=0 && curY>=0 && curX<R & curY<C) {
-					dfs(curX,curY,count+1);
+
+			for (int i = 0; i < 4; i++) {
+				int nx = x + dx[i];
+				int ny = y + dy[i];
+
+				if (nx >= 0 && nx < R && ny >= 0 && ny < C) {
+					dfs(nx, ny, depth + 1);
 				}
+
 			}
 			
 			visit[map[x][y]] = false;
+
 		}
+
 	}
 
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		R = sc.nextInt();
+		C = sc.nextInt();
+
+		map = new char[R][C];
+
+		for (int i = 0; i < R; i++) {
+			String str = sc.next();
+			for (int j = 0; j < C; j++) {
+				map[i][j] = str.charAt(j);
+			}
+		}
+		
+		dfs(0,0,0);
+		System.out.println(ans);
+
+	}
 }
