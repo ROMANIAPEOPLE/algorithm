@@ -11,6 +11,7 @@ public class 독일식로또 {
 		if(index == n) {
 			if(count == 6) {
 				System.out.println(result);
+				return;
 			}
 		}
 		
