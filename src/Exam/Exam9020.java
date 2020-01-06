@@ -24,7 +24,7 @@ public class Exam9020 {
 		Scanner sc = new Scanner(System.in);
 		
 		prime();
-		
+		boolean check = false;
 		while(true) {
 			int n = sc.nextInt();
 			if(n==0) break;
@@ -34,12 +34,15 @@ public class Exam9020 {
 				if(!ck[i] && !ck[n-i]) {
 					System.out.print(n + " = " + (i) + " + " + (n-i));
 					System.out.println();
+					check = true;
 					break;
 				}
 				
 			}
 			
-			
+			if(!check) {
+                System.out.println("Goldbach's conjecture is wrong.");
+			}
 		}
 		
 	}
