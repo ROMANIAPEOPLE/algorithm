@@ -21,7 +21,6 @@ public class Exam14899 {
 				map[i][j] = sc.nextInt();
 			}
 		}
-		d
 		
 		bt(0,0);
 		
