@@ -36,10 +36,7 @@ public class Exam9375 {
 				result *= (map.get(v) + 1);
 			}
 
-			System.out.println(result-1);
-			
+			System.out.println(result - 1);
 		}
-
 	}
-
 }
