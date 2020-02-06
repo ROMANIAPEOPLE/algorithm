@@ -11,6 +11,7 @@ public class Exam2231 {
 		int num = sc.nextInt();
 		int a = num;
 		int res = 0;
+		
 		while (num != 0) {
 			num--;
 
