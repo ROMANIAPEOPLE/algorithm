@@ -23,14 +23,13 @@ class Interval3{
 public class MeetingRoom2 {
 
 	public static void main(String[] args) {
-		Interval3 int1 = new Interval3(0, 14);
+		Interval3 int1 = new Interval3(0, 30);
+		Interval3 int3 = new Interval3(15, 20);
 		Interval3 int2 = new Interval3(5, 10);
 		Interval3 int5 = new Interval3(15,20);
-		Interval3 int3 = new Interval3(7, 12);
-		Interval3 int4 = new Interval3(3, 10);
-		Interval3 int6 = new Interval3(21, 30);
+	
 
-		Interval3[] intervals = { int1, int2, int3,int4,int5,int6 };
+		Interval3[] intervals = { int1, int3, int2,int5 };
 		Arrays.sort(intervals, comp2);
 		
 		
@@ -38,18 +37,18 @@ public class MeetingRoom2 {
 		
 		heap.offer(intervals[0]);
 		for(int i=1; i<intervals.length; i++) {
-			Interval3 in = heap.peek();
+			Interval3 in = heap.poll();
+			System.out.println(in.start+","+in.end);
 			if(in.end > intervals[i].start) {
 				heap.offer(intervals[i]);
 			}
 			
-//			heap.offer(in);
+			heap.offer(in);
 		}
 		
 		
-		System.out.println(heap.size());
-		
-//		print(intervals);
+		System.out.println(heap.size());		
+
 	}
 	
 	static Comparator<Interval3> comp3 = new Comparator<Interval3>() {
