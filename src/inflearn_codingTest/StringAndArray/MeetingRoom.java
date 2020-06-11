@@ -3,7 +3,7 @@ package inflearn_codingTest.StringAndArray;
 import java.util.Arrays;
 import java.util.Comparator;
 
-class Interval {
+class Interval implements Comparable<Interval>{
 	int start;
 	int end;
 
@@ -16,6 +16,11 @@ class Interval {
 		this.start = start;
 		this.end = end;
 	}
+
+	@Override
+	public int compareTo(Interval o2) {
+		return this.start-o2.start;
+	}
 }
 
 public class MeetingRoom {
@@ -27,7 +32,7 @@ public class MeetingRoom {
 		Interval int3 = new Interval(0, 30);
 
 		Interval[] intervals = { int1, int2, int3 };
-		Arrays.parallelSort(intervals, comp);
+		Arrays.sort(intervals);
 
 		print(intervals);
 		System.out.println(solve(intervals));
@@ -46,14 +51,7 @@ public class MeetingRoom {
 
 	}
 
-	public static Comparator<Interval> comp = new Comparator<Interval>() {
 
-		@Override
-		public int compare(Interval o1, Interval o2) {
-			return o1.start - o2.start;
-		}
-
-	};
 
 	public static void print(Interval[] intervals) {
 		for (int i = 0; i < intervals.length; i++) {
