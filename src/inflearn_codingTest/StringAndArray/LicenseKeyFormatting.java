@@ -3,7 +3,7 @@ package inflearn_codingTest.StringAndArray;
 public class LicenseKeyFormatting {
 
 	public static void main(String[] args) {
-		String s = "5F3Z-2e-9-w";
+		String s = "8-5g-3-J";
 		int k =4;
 		
 		s=s.replace("-", "");
