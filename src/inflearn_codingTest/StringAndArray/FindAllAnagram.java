@@ -5,8 +5,8 @@ import java.util.List;
 
 public class FindAllAnagram {
 	public static void main(String[] args) {
-		String txt = "cbaebabacd";
-		String pat = "abc";
+		String txt = "BACDGABCDA";
+		String pat = "ABCD";
 
 		ArrayList<Integer> list = new ArrayList<>();
 		list = (ArrayList<Integer>) solve(txt, pat);
