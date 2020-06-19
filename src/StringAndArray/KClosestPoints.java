@@ -1,4 +1,4 @@
-package inflearn_codingTest.StringAndArray;
+package StringAndArray;
 
 import java.util.Arrays;
 import java.util.Comparator;

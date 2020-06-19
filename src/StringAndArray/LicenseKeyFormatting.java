@@ -1,4 +1,4 @@
-package inflearn_codingTest.StringAndArray;
+package StringAndArray;
 
 public class LicenseKeyFormatting {
 

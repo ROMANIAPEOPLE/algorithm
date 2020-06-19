@@ -1,4 +1,4 @@
-package inflearn_codingTest.StringAndArray;
+package StringAndArray;
 
 import java.util.HashMap;
 import java.util.Map;

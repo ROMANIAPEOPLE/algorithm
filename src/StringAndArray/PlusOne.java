@@ -1,4 +1,4 @@
-package inflearn_codingTest.StringAndArray;
+package StringAndArray;
 
 public class PlusOne {
 	public static void main(String[] args) {
