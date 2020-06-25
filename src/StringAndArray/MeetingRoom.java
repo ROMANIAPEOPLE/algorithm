@@ -3,6 +3,10 @@ package StringAndArray;
 import java.util.Arrays;
 import java.util.Comparator;
 
+/*
+ * 회의실 하나로 회의가 모두 진행 가능하다면 true, 그렇지 않다면 false 리턴.
+ */
+
 class Interval implements Comparable<Interval>{
 	int start;
 	int end;
