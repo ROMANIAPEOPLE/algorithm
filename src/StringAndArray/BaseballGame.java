@@ -13,7 +13,7 @@ public class BaseballGame {
 	
 	public static void main(String[] args) {
 	
-		String[] strs = {"5","-2","4","C","D","9","+","+"};		
+		String[] strs = {"5","2","C","D","+"};		
 		System.out.println(points(strs));
 	}
 	
@@ -38,11 +38,10 @@ public class BaseballGame {
 				Integer temp1 = stack.pop();
 				Integer temp2 = stack.pop();
 				
-				Integer sum = temp1+temp2;
 				
 				stack.add(temp2);
 				stack.add(temp1);
-				stack.add(sum);
+				stack.add(temp2+temp1);
 			}
 			
 		}
