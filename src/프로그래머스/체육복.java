@@ -20,10 +20,10 @@ public class Ã¼À°º¹ {
 				}
 			}
 		}
-		
-		for(int i=0; i<lost.length; i++) {
-			for(int j=0; j<reserve.length; j++) {
-				if(reserve[j]-1 ==lost[i] || reserve[j]+1 == lost[i]) {
+
+		for (int i = 0; i < lost.length; i++) {
+			for (int j = 0; j < reserve.length; j++) {
+				if (reserve[j] - 1 == lost[i] || reserve[j] + 1 == lost[i]) {
 					answer++;
 					reserve[j] = -1;
 					break;

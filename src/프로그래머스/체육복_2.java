@@ -30,13 +30,11 @@ public class Ã¼À°º¹_2 {
 
 			else if (set.contains(lost[i] + 1)) {
 				answer++;
-				set.remove(lost[i ]+1);
+				set.remove(lost[i] + 1);
 				lost[i] = -1;
 				continue;
 			}
-
 		}
-
 		return answer;
 	}
 }
