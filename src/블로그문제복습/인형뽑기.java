@@ -10,40 +10,37 @@ public class ÀÎÇü»Ì±â {
 
 		System.out.println(solution(board, moves));
 	}
-	
+
 	public static int solution(int[][] board, int[] moves) {
-		int res =0;
+		int res = 0;
 		Stack<Integer> st = new Stack<>();
-		
-		for(int i=0; i<moves.length; i++) {
-			for(int j=0; j<board.length; j++) {
-				if(board[j][moves[i]-1] !=0) {
-					//1 
-					if(!st.isEmpty()) {
-						if(st.peek() == board[j][moves[i]-1]) {
-							res+=2;
+
+		for (int i = 0; i < moves.length; i++) {
+			for (int j = 0; j < board.length; j++) {
+				if (board[j][moves[i] - 1] != 0) {
+					// 1
+					if (!st.isEmpty()) {
+						if (st.peek() == board[j][moves[i] - 1]) {
+							res += 2;
 							st.pop();
-							board[j][moves[i]-1] =0;
+							board[j][moves[i] - 1] = 0;
 							break;
-						}
-						else {
-							st.push(board[j][moves[i]-1]);
-							board[j][moves[i]-1]=0;
+						} else {
+							st.push(board[j][moves[i] - 1]);
+							board[j][moves[i] - 1] = 0;
 							break;
 						}
 					}
-					//2
+					// 2
 					else {
-						st.push(board[j][moves[i]-1]);
-						board[j][moves[i]-1]=0;
+						st.push(board[j][moves[i] - 1]);
+						board[j][moves[i] - 1] = 0;
 						break;
 					}
-					
+
 				}
 			}
 		}
-		
-		
 		return res;
 	}
 }

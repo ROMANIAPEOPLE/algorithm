@@ -7,11 +7,10 @@ import java.util.Queue;
 public class note {
 
 	public static void main(String[] args) {
-		int[] answer = {};
+		String s ="abce"; 		
 
-		answer = new int[] {1,2,3};
- 		
-		System.out.println(Arrays.toString(answer));
+		System.out.println(s.substring(1, 3));
 
+	
 	}
 }
