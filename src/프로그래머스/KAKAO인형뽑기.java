@@ -16,12 +16,29 @@ public class KAKAO인형뽑기 {
 
 		int res = 0;
 		Stack<Integer> st = new Stack<>();
-		
-		for(int i=0; i<moves.length; i++) {
-			
+
+		for (int i = 0; i < moves.length; i++) {
+			for (int j = 0; j < board.length; j++) {
+
+				if (board[j][moves[i] - 1] != 0) {
+					if (!st.empty()) { // 스택이 비어있을때
+						if (st.peek() == board[j][moves[i] - 1]) { // 피크값과 현재값이 동일하다면 터진다.
+							res += 2;
+							st.pop();
+							
+
+						} else { // 동일하지 않다면 그냥 넣어만 준다.
+							st.push(board[j][moves[i] - 1]);
+							
+						}
+					} else {// 스택이 비어있다면
+						st.push(board[j][moves[i] - 1]);
+					}
+					board[j][moves[i] - 1] = 0;
+					break;
+				}
+			}
 		}
-
-
 		return res;
 	}
 }
