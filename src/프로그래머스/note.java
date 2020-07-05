@@ -7,10 +7,14 @@ import java.util.Queue;
 public class note {
 
 	public static void main(String[] args) {
-		String s ="abce"; 		
 
-		System.out.println(s.substring(1, 3));
-
+		
+		String [] s = {"BACDE", "CBADF", "AECB", "BDA"};
+		
+		char [] c = s[0].toCharArray();
+		
+		
+		System.out.println(Arrays.toString(c));
 	
 	}
 }
