@@ -1,6 +1,9 @@
 package 프로그래머스;
-public class 시저암호 {
 
+public class 시저암호 {
+//A : 65
+//a : 97
+	// +25씩 하면 z임
 	public static void main(String[] args) {
 		String s = "a B z";
 		System.out.println(solution(s, 4));
