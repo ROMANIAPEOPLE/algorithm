@@ -1,20 +1,24 @@
 package 프로그래머스;
 
-import java.util.Arrays;
-import java.util.PriorityQueue;
-import java.util.Queue;
-
+//A  : 65  a : 97
 public class note {
 
 	public static void main(String[] args) {
 
+	//'아스키코드' + 받은값 < 122 가 되면, 
+	// 122-26을 해주고,  n만큼 + 해주면 됨.
+		//for문 돌리면서, 아스키코드 값이 122가 되는 순간, 26을 뺴주고
+		//나머지 다시 더해준다.
 		
-		String [] s = {"BACDE", "CBADF", "AECB", "BDA"};
+	//대문자일경우는,  
 		
-		char [] c = s[0].toCharArray();
+
+		String [] str = {"a" ,"b","c"};
 		
 		
-		System.out.println(Arrays.toString(c));
-	
+		
+		
 	}
+
+
 }
