@@ -1,17 +1,16 @@
 package 프로그래머스;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-//A  : 65  a : 97
-public class note {
+public class 카카오인턴_키패드누르기 {
 
 	public static void main(String[] args) {
+		int [] numbers = {7, 0, 8, 2, 8, 3, 1, 5, 7, 6, 2};
+		String hand = "left";
 
-		int[] n = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+		System.out.println(solution(numbers,hand));
+		
+	}
 
-		String hand = "right";
+	public static String solution(int[] n, String hand) {
 		int[] number = { 1, 2, 3, 4, 5, 6, 7, 8, 9, -2, 0, -2 };
 		int[][] phone = new int[4][3];
 		int k = 0;
@@ -51,8 +50,7 @@ public class note {
 				int rightX = getX(locationRigth, phone);
 				int rightY = getY(locationRigth, phone);
 
-				int left = Math
-						.abs(((leftX - phoneX) * (leftX - phoneX)) + Math.abs(((leftY - phoneY) * (leftY - phoneY))));
+			    int left =(int) Math.abs(Math.pow((leftX-phoneX),2) +Math.pow((leftY-phoneY),2));
 				int right = Math.abs(
 						((rightX - phoneX) * (rightX - phoneX)) + Math.abs(((rightY - phoneY) * (rightY - phoneY))));
 
@@ -75,8 +73,9 @@ public class note {
 			}
 
 		}
-		System.out.println(bd.toString());
 
+		return bd.toString();
+		
 	}
 
 	public static int getX(int num, int[][] phone) {

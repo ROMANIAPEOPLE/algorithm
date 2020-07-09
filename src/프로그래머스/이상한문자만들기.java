@@ -10,28 +10,23 @@ public class 이상한문자만들기 {
 
 	public static String solution(String s) {
 		String answer = "";
-		String [] str = s.split("");
+		String[] str = s.split("");
 
-		int count =0;
-		
-		for(int i=0; i<str.length; i++) {
-			if(str[i].equals(" ")) {
-				count=0;
-				answer+=str[i];
+		int count = 0;
+
+		for (int i = 0; i < str.length; i++) {
+			if (str[i].equals(" ")) {
+				count = 0;
+				answer += str[i];
 			}
-			
-			else if(count%2 == 0) {
-				answer+=str[i].toUpperCase();
+
+			else if (count % 2 == 0) {
+				answer += str[i].toUpperCase();
+				count++;
+			} else {
+				answer += str[i].toLowerCase();
 				count++;
 			}
-			else {
-				answer+=str[i].toLowerCase();
-				count++;
-			}
-			
-			
-			
-			
 		}
 
 		return answer;
