@@ -1,104 +1,57 @@
 package 프로그래머스;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 //A  : 65  a : 97
 public class note {
 
 	public static void main(String[] args) {
 
-		int[] n = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
-
-		String hand = "right";
-		int[] number = { 1, 2, 3, 4, 5, 6, 7, 8, 9, -2, 0, -2 };
-		int[][] phone = new int[4][3];
-		int k = 0;
-
-		for (int i = 0; i < phone.length; i++) {
-			for (int j = 0; j < phone[i].length; j++) {
-				phone[i][j] = number[k++];
-
-			}
-		}
-		for (int i = 0; i < phone.length; i++) {
-			System.out.println();
-			for (int j = 0; j < phone[i].length; j++) {
-				System.out.print(phone[i][j] + " ");
-			}
-		}
-		////////////////////////////// 폰만들기 ////////////////////////////
-
-		StringBuilder bd = new StringBuilder();
-
-		int locationLeft = phone[3][0];
-		int locationRigth = phone[3][2];
-		for (int i = 0; i < n.length; i++) {
-			if (n[i] == 1 || n[i] == 4 || n[i] == 7) {
-				locationLeft = n[i];
-				bd.append("L");
-			} else if (n[i] == 3 || n[i] == 6 || n[i] == 9) {
-				locationRigth = n[i];
-				bd.append("R");
-			} else {
-				int phoneX = getX(n[i], phone);
-				int phoneY = getY(n[i], phone);
-
-				int leftX = getX(locationLeft, phone);
-				int leftY = getY(locationLeft, phone);
-
-				int rightX = getX(locationRigth, phone);
-				int rightY = getY(locationRigth, phone);
-
-				int left = Math
-						.abs(((leftX - phoneX) * (leftX - phoneX)) + Math.abs(((leftY - phoneY) * (leftY - phoneY))));
-				int right = Math.abs(
-						((rightX - phoneX) * (rightX - phoneX)) + Math.abs(((rightY - phoneY) * (rightY - phoneY))));
-
-				if (left > right) {
-					locationRigth = n[i];
-					bd.append("R");
-				} else if (left < right) {
-					locationLeft = n[i];
-					bd.append("L");
-				} else {
-					if (hand.equals("right")) {
-						locationRigth = n[i];
-						bd.append("R");
-					} else if (hand.equals("left")) {
-						locationLeft = n[i];
-						bd.append("L");
-					}
-				}
-
-			}
-
-		}
-		System.out.println(bd.toString());
-
+		int[] s = { 2, 1, 2, 6, 2, 4, 3, 3 };
+		int n = 5;
+		System.out.println(solution(n, s));
 	}
 
-	public static int getX(int num, int[][] phone) {
-		for (int i = 0; i < phone.length; i++) {
-			for (int j = 0; j < phone[i].length; j++) {
-				if (phone[i][j] == num) {
-					return i;
+	public static int[] solution(int n, int[] stages) {
+		int[] answer = new int[n];
+		int count = stages.length; // 스테이지에 도달한 플레이어 수
+		double[] fail = new double[n];
+		Map<Integer, Double> map = new HashMap<>();
+		int stageCnt = 0;
+		for (int i = 1; i <= n; i++) {
+			for (int j = 0; j < stages.length; j++) {
+				if (i == stages[j]) {
+					stageCnt++; // 그 단계의 스테이지를 ++
+				}
+			}
+			fail[i - 1] = (double) (stageCnt / count);
+			map.put(i, fail[i - 1]); // key값이 index , value가 실패율(중복)
+			count -= stageCnt; // 이전 스테이지는 뺴주고,
+			stageCnt = 0; // 스테이지 카운터는 다시 0으로
+		}
+
+		Arrays.sort(fail); // 실패율이 낮은순으로 저장되어있음.
+
+		for (int i = 0; i < fail.length / 2; i++) {
+			// swap the elements
+			double temp = fail[i];
+			fail[i] = fail[fail.length - (i + 1)];
+			fail[fail.length - (i + 1)] = temp;
+		}
+
+		for (int i = 0; i < fail.length; i++) {
+			for (int j = 0; j < map.size(); j++) {
+				if (fail[i] == map.get(j)) {
+					answer[i] = j;
 				}
 			}
 		}
-		return -1;
-	}
 
-	public static int getY(int num, int[][] phone) {
-		for (int i = 0; i < phone.length; i++) {
-			for (int j = 0; j < phone[i].length; j++) {
-				if (phone[i][j] == num) {
-					return j;
-				}
-			}
-		}
-		return -1;
+		return answer;
 	}
-
-}
+} // 1 2 3 4 5 번 순서대로 실패율이 저장이 되어있음.
+	// 뭐가 뭐 실패율인지 알아야하는데. map에 실패율을 key값으로 저장할 수는 없음.
+	// 2번 인덱스의 실패율
+	// for문을 map의 사이즈만큼 돌면서,
+	// fail[i] 의 값과 map.get(j)이 일치한다면 ?
+	// answer에 j를 넣어주면 되나..
