@@ -24,28 +24,15 @@ public class note {
 					stageCnt++; // 그 단계의 스테이지를 ++
 				}
 			}
-			fail[i - 1] = (double) (stageCnt / count);
+			fail[i - 1] =  (stageCnt /(double) count);
 			map.put(i, fail[i - 1]); // key값이 index , value가 실패율(중복)
 			count -= stageCnt; // 이전 스테이지는 뺴주고,
 			stageCnt = 0; // 스테이지 카운터는 다시 0으로
 		}
 
-		Arrays.sort(fail); // 실패율이 낮은순으로 저장되어있음.
 
-		for (int i = 0; i < fail.length / 2; i++) {
-			// swap the elements
-			double temp = fail[i];
-			fail[i] = fail[fail.length - (i + 1)];
-			fail[fail.length - (i + 1)] = temp;
-		}
+		
 
-		for (int i = 0; i < fail.length; i++) {
-			for (int j = 0; j < map.size(); j++) {
-				if (fail[i] == map.get(j)) {
-					answer[i] = j;
-				}
-			}
-		}
 
 		return answer;
 	}
