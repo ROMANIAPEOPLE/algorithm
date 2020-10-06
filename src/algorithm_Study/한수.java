@@ -1,39 +1,39 @@
-package algorithm_Study;
-
-import java.util.Scanner;
-
-public class ÇÑ¼ö {
-
-	public static void hansu(int n) {
-		if (n < 100)
-			System.out.println(n);
-
-		else {
-			int result = 99;
-
-			for (int i = 100; i <= n; i++) {
-				int a = i / 100; // 100ÀÇÀÚ¸® ±¸ÇÏ±â
-				int b = (i % 100) / 10; // 10ÀÇÀÚ¸®
-				int c = i % 10; // 1ÀÇ ÀÚ¸®
-
-				if ((b - a) == (c - b)) {
-					result++;
-				}
-
-			}
-
-			System.out.println(result);
-		}
-
-	}
-
-	public static void main(String[] args) {
-
-		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();
-
-		hansu(n);
-
-	}
-
-}
+//package algorithm_Study;
+//
+//import java.util.Scanner;
+//
+//public class ï¿½Ñ¼ï¿½ {
+//
+//	public static void hansu(int n) {
+//		if (n < 100)
+//			System.out.println(n);
+//
+//		else {
+//			int result = 99;
+//
+//			for (int i = 100; i <= n; i++) {
+//				int a = i / 100; // 100ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
+//				int b = (i % 100) / 10; // 10ï¿½ï¿½ï¿½Ú¸ï¿½
+//				int c = i % 10; // 1ï¿½ï¿½ ï¿½Ú¸ï¿½
+//
+//				if ((b - a) == (c - b)) {
+//					result++;
+//				}
+//
+//			}
+//
+//			System.out.println(result);
+//		}
+//
+//	}
+//
+//	public static void main(String[] args) {
+//
+//		Scanner sc = new Scanner(System.in);
+//		int n = sc.nextInt();
+//
+//		hansu(n);
+//
+//	}
+//
+//}

@@ -1,60 +1,60 @@
-package Exam;
-
-import java.util.Scanner;
-
-public class ¸®¸ðÄÜ {
-
-	static boolean[] broken = new boolean[10];
-
-	static int check(int c) {
-		int len = 0;
-		if (c == 0) {
-			if (broken[0]) {
-				return 0;
-			} else
-				return 1;
-		}
-
-		else {
-			while (c > 0) {
-				if (broken[c % 10]) {
-					return 0;
-				}
-				len += 1;
-				c /= 10;
-			}
-			return len;
-
-		}
-
-	}
-
-	public static void main(String[] args) {
-
-		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();
-		int m = sc.nextInt();
-		for (int i = 0; i < m; i++) {
-			int x = sc.nextInt();
-			broken[x] = true; // °íÀå³­¹öÆ°
-		}
-
-		int ans = Math.abs(n - 100); // ¸ðµçÅ°°¡ °íÀå³µ´Ù´Â °¡Á¤À» ÇÑ ans
-
-		for (int i = 0; i <= 1000000; i++) {
-			int c = i;
-			int cnt = check(c); // cÃ¤³Î·Î ÀÌµ¿°¡´ÉÇÑÁö, °¡´ÉÇÏ´Ù¸é ¸î¹ø´­¸£´ÂÁö
-
-			if (cnt > 0) {
-				int press = Math.abs(c - n);
-
-				if (ans > press + cnt) {
-					ans = press + cnt;
-				}
-			}
-		}
-		System.out.println(ans);
-
-	}
-
-}
+//package Exam;
+//
+//import java.util.Scanner;
+//
+//public class ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ {
+//
+//	static boolean[] broken = new boolean[10];
+//
+//	static int check(int c) {
+//		int len = 0;
+//		if (c == 0) {
+//			if (broken[0]) {
+//				return 0;
+//			} else
+//				return 1;
+//		}
+//
+//		else {
+//			while (c > 0) {
+//				if (broken[c % 10]) {
+//					return 0;
+//				}
+//				len += 1;
+//				c /= 10;
+//			}
+//			return len;
+//
+//		}
+//
+//	}
+//
+//	public static void main(String[] args) {
+//
+//		Scanner sc = new Scanner(System.in);
+//		int n = sc.nextInt();
+//		int m = sc.nextInt();
+//		for (int i = 0; i < m; i++) {
+//			int x = sc.nextInt();
+//			broken[x] = true; // ï¿½ï¿½ï¿½å³­ï¿½ï¿½Æ°
+//		}
+//
+//		int ans = Math.abs(n - 100); // ï¿½ï¿½ï¿½Å°ï¿½ï¿½ ï¿½ï¿½ï¿½å³µï¿½Ù´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ans
+//
+//		for (int i = 0; i <= 1000000; i++) {
+//			int c = i;
+//			int cnt = check(c); // cÃ¤ï¿½Î·ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½Ï´Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//
+//			if (cnt > 0) {
+//				int press = Math.abs(c - n);
+//
+//				if (ans > press + cnt) {
+//					ans = press + cnt;
+//				}
+//			}
+//		}
+//		System.out.println(ans);
+//
+//	}
+//
+//}

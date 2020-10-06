@@ -1,34 +1,34 @@
-package ºí·Î±×¹®Á¦º¹½À;
-
-import java.util.HashSet;
-import java.util.Set;
-
-public class Áê¾ó¸®½ºÅæ {
-
-	public static void main(String[] args) {
-		String jew = "aA";
-		String st = "aAAbbbb";
-	
-		System.out.println(solve(jew,st));
-		
-	}
-	public static int solve(String jew, String st) {
-		Set<Character> set = new HashSet<>();
-		
-		int count =0;
-		for(char j : jew.toCharArray()) {
-			set.add(j);
-		}
-		
-		for(char s : st.toCharArray()) {
-			if(set.contains(s)) {
-				count++;
-			}
-			
-		}
-		
-		return count;
-	}
-	
-	
-}
+//package ï¿½ï¿½Î±×¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;
+//
+//import java.util.HashSet;
+//import java.util.Set;
+//
+//public class ï¿½ï¿½ó¸®½ï¿½ï¿½ï¿½ {
+//
+//	public static void main(String[] args) {
+//		String jew = "aA";
+//		String st = "aAAbbbb";
+//
+//		System.out.println(solve(jew,st));
+//
+//	}
+//	public static int solve(String jew, String st) {
+//		Set<Character> set = new HashSet<>();
+//
+//		int count =0;
+//		for(char j : jew.toCharArray()) {
+//			set.add(j);
+//		}
+//
+//		for(char s : st.toCharArray()) {
+//			if(set.contains(s)) {
+//				count++;
+//			}
+//
+//		}
+//
+//		return count;
+//	}
+//
+//
+//}

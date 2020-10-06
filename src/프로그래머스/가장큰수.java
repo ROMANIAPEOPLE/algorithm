@@ -1,30 +1,30 @@
-package ÇÁ·Î±×·¡¸Ó½º;
-
-
-public class °¡ÀåÅ«¼ö {
-
-	public String solution(String number, int k) {
-		
-		StringBuilder bd = new StringBuilder();
-		int max = 0;
-		int index =0;
-		int size = number.length()-k;
-		for(int i=0; i<number.length()-k; i++) { // K¸¸Å­ »©ÁØ ±æÀÌ¸¦ ±¸ÇØ¾ßÇÔ
-			for(int j=index; j+size <=number.length(); j++ ) {
-				int num = number.charAt(j)-'0';
-				if(max< num) {
-					max  = num;
-					index = j+1;
-				}
-			}
-
-			
-			bd.append(max);
-			max = 0;
-			size--;
-		}
-		
-		return bd.toString();
-		
-	}
-}
+//package ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½Ó½ï¿½;
+//
+//
+//public class ï¿½ï¿½ï¿½ï¿½Å«ï¿½ï¿½ {
+//
+//	public String solution(String number, int k) {
+//
+//		StringBuilder bd = new StringBuilder();
+//		int max = 0;
+//		int index =0;
+//		int size = number.length()-k;
+//		for(int i=0; i<number.length()-k; i++) { // Kï¿½ï¿½Å­ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½
+//			for(int j=index; j+size <=number.length(); j++ ) {
+//				int num = number.charAt(j)-'0';
+//				if(max< num) {
+//					max  = num;
+//					index = j+1;
+//				}
+//			}
+//
+//
+//			bd.append(max);
+//			max = 0;
+//			size--;
+//		}
+//
+//		return bd.toString();
+//
+//	}
+//}

@@ -1,4 +1,4 @@
-package ÇÁ·Î±×·¡¸Ó½º;
+package í”„ë¡œê·¸ëž˜ë¨¸ìŠ¤;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -15,7 +15,7 @@ class Pr {
 
 }
 
-public class ÇÁ¸°ÅÍ±â {
+public class í”„ë¦°í„°ê¸° {
 	public int solution(int[] priorities, int location) {
 
 		Queue<Pr> queue = new LinkedList<>();

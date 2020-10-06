@@ -1,4 +1,4 @@
-package ÇÁ·Î±×·¡¸Ó½º;
+package í”„ë¡œê·¸ëž˜ë¨¸ìŠ¤;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -14,7 +14,7 @@ class printer {
 	}
 }
 
-public class ÇÁ¸°ÅÍ {
+public class í”„ë¦°í„° {
 	public int solution(int[] priorities, int location) {
 		int answer = 1;
 		

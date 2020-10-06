@@ -1,8 +1,8 @@
-package ÇÁ·Î±×·¡¸Ó½º;
+package í”„ë¡œê·¸ë˜ë¨¸ìŠ¤;
 
 import java.util.Arrays;
 
-public class ½ÃÅ©¸´¸Ê {
+public class ì‹œí¬ë¦¿ë§µ {
 
 	public static void main(String[] args) {
 		int[] arr1 = { 46, 33, 33, 22, 31, 50 };

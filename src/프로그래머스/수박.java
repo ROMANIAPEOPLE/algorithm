@@ -1,39 +1,39 @@
-package ÇÁ·Î±×·¡¸Ó½º;
-
-public class ¼ö¹Ú {
-	public static void main(String[] args) {
-
-		System.out.println(solution(7));
-
-	}
-
-	public static String solution(int n) {
-		String answer = "";
-
-		StringBuilder bd = new StringBuilder(answer);
-		String str = "¼ö¹Ú";
-
-		if (n % 2 == 0) {
-			n = n / 2;
-			for (int i = 0; i < n; i++) {
-				bd.append(str);
-			}
-		} else {
-			n = (n / 2) + 1;
-			for (int i = 0; i < n; i++) {
-				bd.append(str);
-
-			}
-			bd.delete(bd.length() - 1, bd.length());
-		}
-		answer = bd.toString();
-		return answer;
-	}
-
-	public String solution2(int n) {
-		String result = "";
-		for (int i = 0; i < n; i++)
-			result += i % 2 == 0 ? "¼ö" : "¹Ú";
-		return result;
-	}
-}
+//package ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½Ó½ï¿½;
+//
+//public class ï¿½ï¿½ï¿½ï¿½ {
+//	public static void main(String[] args) {
+//
+//		System.out.println(solution(7));
+//
+//	}
+//
+//	public static String solution(int n) {
+//		String answer = "";
+//
+//		StringBuilder bd = new StringBuilder(answer);
+//		String str = "ï¿½ï¿½ï¿½ï¿½";
+//
+//		if (n % 2 == 0) {
+//			n = n / 2;
+//			for (int i = 0; i < n; i++) {
+//				bd.append(str);
+//			}
+//		} else {
+//			n = (n / 2) + 1;
+//			for (int i = 0; i < n; i++) {
+//				bd.append(str);
+//
+//			}
+//			bd.delete(bd.length() - 1, bd.length());
+//		}
+//		answer = bd.toString();
+//		return answer;
+//	}
+//
+//	public String solution2(int n) {
+//		String result = "";
+//		for (int i = 0; i < n; i++)
+//			result += i % 2 == 0 ? "ï¿½ï¿½" : "ï¿½ï¿½";
+//		return result;
+//	}
+//}

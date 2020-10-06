@@ -1,39 +1,39 @@
-package ¼öÇÐ1;
-
-import java.util.Arrays;
-import java.util.Scanner;
-
-public class °ñµå¹ÙÈå2_ÃÖ¼Ò°ª {
-	static boolean[] check = new boolean[10001];
-
-	public static void build_Prime() {
-		for (int i = 2; i <= 10000; i++) {
-			if (check[i]) {
-				for (int j = i * 2; j <= 10000; j += i) {
-					check[j] = false; // ¼Ò¼ö¸é true, ¾Æ´Ï¸é false
-				}
-			}
-		}
-	}
-
-	
-	public static void main(String[] args) {
-		Arrays.fill(check, true);
-		Scanner sc = new Scanner(System.in);
-		int T = sc.nextInt();
-		build_Prime();
-		while(T-- > 0) {
-			int n =sc.nextInt();
-			n/=2;
-			int dif=0;
-			while(true) {
-				if(check[n-dif] && check[n+dif]) {
-					System.out.print((n-dif) + " " + (n+dif));
-					System.out.println();
-					break;
-				}
-				dif++;
-			}
-		}
-	}
-}
+//package ï¿½ï¿½ï¿½ï¿½1;
+//
+//import java.util.Arrays;
+//import java.util.Scanner;
+//
+//public class ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2_ï¿½Ö¼Ò°ï¿½ {
+//	static boolean[] check = new boolean[10001];
+//
+//	public static void build_Prime() {
+//		for (int i = 2; i <= 10000; i++) {
+//			if (check[i]) {
+//				for (int j = i * 2; j <= 10000; j += i) {
+//					check[j] = false; // ï¿½Ò¼ï¿½ï¿½ï¿½ true, ï¿½Æ´Ï¸ï¿½ false
+//				}
+//			}
+//		}
+//	}
+//
+//
+//	public static void main(String[] args) {
+//		Arrays.fill(check, true);
+//		Scanner sc = new Scanner(System.in);
+//		int T = sc.nextInt();
+//		build_Prime();
+//		while(T-- > 0) {
+//			int n =sc.nextInt();
+//			n/=2;
+//			int dif=0;
+//			while(true) {
+//				if(check[n-dif] && check[n+dif]) {
+//					System.out.print((n-dif) + " " + (n+dif));
+//					System.out.println();
+//					break;
+//				}
+//				dif++;
+//			}
+//		}
+//	}
+//}
